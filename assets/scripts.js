@@ -35,7 +35,7 @@ function displayUVindex(uv) {
     //var uvIndexURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + k + uv;
     
     $.ajax({ // gets the UV index info
-        url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + uv,
+        url: "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + uv,
         method: "GET"
         })
         .then(function(response) {
@@ -47,14 +47,14 @@ function displayUVindex(uv) {
 function displayForecast(c) {
     console.log(c);
     $.ajax({ // gets the 5 day forecast
-        url: "http://api.openweathermap.org/data/2.5/forecast?id=" + c + "&units=imperial&APPID=" + APIKey + "&cnt=5",
+        url: "https://api.openweathermap.org/data/2.5/forecast?id=" + c + "&units=imperial&APPID=" + APIKey + "&cnt=5",
         method: "GET"
         })
         .then(function(response) {
 
             var date = response.list[0].dt_txt;
             //date.toString();
-            date.replace(/-/g, "/");
+            date.replace(/[-]/g, "/");
             //console.log(response);
             console.log(date);
             $(".date").text(date);
