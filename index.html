@@ -14,34 +14,51 @@
           <div class="container">
             <div class="columns">
                 <div class="column is-narrow">
+                  <p>WD</p>
                     <h1 class="title">weather<br>dashboard</h1>
                 </div>
+                <div class="column is-narrow">
+                  <div class="field has-addons">
+                      <div class="control">
+                        <input class="input city" type="text" placeholder="Find a city">
+                      </div>
+                      <div class="control">
+                        <a class="button is-info search">Search</a>
+                      </div>
+                    </div>
+                </div>
                 <div class="column">
-                    <div class="field has-addons">
-                        <div class="control">
-                          <input class="input" type="text" placeholder="Find a city">
-                        </div>
-                        <div class="control">
-                          <a class="button is-info">
-                            Search
-                          </a>
-                        </div>
-                      </div>
-                      <h4 class="">Recently searched cities: </h4>
-                      <div class="buttons">
-                        <button class="button is-small">Miami</button>
-                        <button class="button is-small">Islamabad</button>
-                        <button class="button is-small">Barcelona</button>
-                      </div>
+                  <h4 class="">Recently searched cities: </h4>
+                    <div class="buttons">
+                      <button class="button is-small">Miami</button>
+                      <button class="button is-small">Islamabad</button>
+                      <button class="button is-small">Barcelona</button>
+                    </div>
                 </div>
             </div>
-            
-           
-    
           </div>
         </div>
-      </section>
+    </section>
+    <section>
+      <div class="container">
+        <h2 class="title" id="cityMain">City</h2>
+        <h3 class="subtitle" id="dateMain">Date</h3>
+        <p data-content="degree value"><span id="degreeMain"></span> &#176;F</p>
+        <img data-content="weather icon" id="iconMain" src="" alt="current weather icon">
+        <p data-content="humidity">Humidity: <span id="humidityMain"></span></p>
+        <p data-content="wind speed">Wind speed: <span id="windMain"></span></p>
+        <p data-content="uv index">UV index: <span id="uvIndexMain"></span></p>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h2 class="title">5 day forecast</h2>
+        <h3 class="subtitle date"></h3>
+      </div>
+    </section>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="assets/scripts.js"></script>
   </body>
 </html>
