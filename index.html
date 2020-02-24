@@ -3,19 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/main.css">
     <!-- <link rel="stylesheet" href="assets/debug.css"> -->
   </head>
   <body>
     <section class="hero is-small is-light is-bold">
         <div class="hero-body">
           <div class="container">
-            <div class="columns">
-                <div class="column is-narrow">
-                  <p>WD</p>
-                    <h1 class="title">weather<br>dashboard</h1>
+            <div class="columns is-vcentered">
+                <div class="column">
+                  <h1 class="title">weather<br>dashboard</h1>
                 </div>
                 <div class="column is-narrow">
                   <div class="field has-addons">
@@ -27,33 +28,73 @@
                       </div>
                     </div>
                 </div>
-                <div class="column">
+                <!-- <div class="column recent-cities">
                   <h4 class="">Recently searched cities: </h4>
                     <div class="buttons">
                       <button class="button is-small">Miami</button>
                       <button class="button is-small">Islamabad</button>
                       <button class="button is-small">Barcelona</button>
                     </div>
-                </div>
+                </div> -->
             </div>
           </div>
         </div>
     </section>
-    <section>
+    <section class="section">
       <div class="container">
-        <h2 class="title" id="cityMain">City</h2>
-        <h3 class="subtitle" id="dateMain">Date</h3>
-        <p data-content="degree value"><span id="degreeMain"></span> &#176;F</p>
-        <img data-content="weather icon" id="iconMain" src="" alt="current weather icon">
-        <p data-content="humidity">Humidity: <span id="humidityMain"></span></p>
-        <p data-content="wind speed">Wind speed: <span id="windMain"></span></p>
-        <p data-content="uv index">UV index: <span id="uvIndexMain"></span></p>
+        <div class="columns">
+          <div class="column">
+            <h2 class="title" id="cityMain">City</h2>
+            <h3 class="subtitle" id="dateMain">Date</h3>
+            <p data-content="degree value" class="is-size-1 temperatureFont"><span id="degreeMain"></span> &#176;F</p>
+          </div>
+          <div class="column has-background-grey-lighter">
+            <img data-content="weather icon" id="iconMain" src="" alt="current weather icon">
+            <p data-content="humidity">Humidity: <span id="humidityMain"></span></p>
+            <p data-content="wind speed">Wind speed: <span id="windMain"></span></p>
+            <p data-content="uv index">UV index: <span id="uvIndexMain"></span></p>
+          </div>
+        </div>
       </div>
     </section>
-    <section>
+    <section class="section has-background-info">
       <div class="container">
-        <h2 class="title">5 day forecast</h2>
-        <h3 class="subtitle date"></h3>
+        <h2 class="title has-text-white-ter">5 day forecast</h2>
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title is-5" index="0">One</p>
+              <p class="subtitle is-5">Subtitle</p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title is-5" index="1">Two</p>
+              <p class="subtitle is-5">Subtitle</p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title is-5" index="2">Three</p>
+              <p class="subtitle is-5">Subtitle</p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title is-5" index="3">Four</p>
+              <p class="subtitle is-5">Subtitle</p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title is-5" index="4">Five</p>
+              <p class="subtitle is-5">Subtitle</p>
+            </article>
+          </div>
+        </div>
+      </div>
+      
+       
       </div>
     </section>
 
