@@ -81,7 +81,7 @@ function displayForecast(c) {
 
 function currentLocation() {
     $.ajax({ 
-        url: "http://ip-api.com/json",
+        url: "https://freegeoip.app/json/",
         method: "GET"
         })
         .then(function(response) {
