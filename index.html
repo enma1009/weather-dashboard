@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,10 +15,10 @@
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">
-                <div class="column">
-                  <h1 class="title">weather<br>dashboard</h1>
-                </div>
                 <div class="column is-narrow">
+                  <h1 class="title temperatureFont">Weather Dashboard</h1>
+                </div>
+                <div class="column">
                   <div class="field has-addons">
                       <div class="control">
                         <input class="input city" type="text" placeholder="Find a city">
@@ -28,73 +28,91 @@
                       </div>
                     </div>
                 </div>
-                <!-- <div class="column recent-cities">
-                  <h4 class="">Recently searched cities: </h4>
-                    <div class="buttons">
-                      <button class="button is-small">Miami</button>
-                      <button class="button is-small">Islamabad</button>
-                      <button class="button is-small">Barcelona</button>
+                <div class="column is-hidden recent-cities-container">
+                  <h4>Recently searched cities:</h4>
+                    <div class="buttons recent-cities">
                     </div>
-                </div> -->
+                </div>
             </div>
           </div>
         </div>
     </section>
-    <section class="section">
+    <section class="section has-background-grey has-text-white-bis">
       <div class="container">
-        <div class="columns">
+        <div class="columns is-vcentered">
           <div class="column">
-            <h2 class="title" id="cityMain">City</h2>
-            <h3 class="subtitle" id="dateMain">Date</h3>
-            <p data-content="degree value" class="is-size-1 temperatureFont"><span id="degreeMain"></span> &#176;F</p>
+            <h2 class="title has-text-white-bis" id="cityMain">City</h2>
+            <h3 class="subtitle has-text-white-bis" id="dateMain">Date</h3>
           </div>
-          <div class="column has-background-grey-lighter">
-            <img data-content="weather icon" id="iconMain" src="" alt="current weather icon">
-            <p data-content="humidity">Humidity: <span id="humidityMain"></span></p>
-            <p data-content="wind speed">Wind speed: <span id="windMain"></span></p>
-            <p data-content="uv index">UV index: <span id="uvIndexMain"></span></p>
+          <div class="column">
+            <div class="columns is-vcentered">
+              <div class="column is-narrow">
+                <img id="iconMain" src="#" alt="current weather icon">
+              </div>
+              <div class="column">
+                <p class="is-size-1 temperatureFont"><span id="degreeMain"></span> &#176;F</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+          
+          <div class="column">
+              <p><b>Humidity: </b><span id="humidityMain"></span></p>
+              <p><b>Wind speed: </b><span id="windMain"></span></p>
+              <p><b>UV index: </b><span id="uvIndexMain"></span></p>
+            </div>
+          </div>
+         </div>
     </section>
     <section class="section has-background-info">
       <div class="container">
-        <h2 class="title has-text-white-ter">5 day forecast</h2>
+        <h2 class="title is-4 is-uppercase temperatureFont has-text-white-ter">5 day forecast</h2>
         <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title is-5" index="0">One</p>
-              <p class="subtitle is-5">Subtitle</p>
+          <div class="tile is-parent ">
+            <article class="tile is-child box forecastBgrd">
+              <h3 class="title is-5 has-text-link" data-index="0">One</h3>
+              <img src="#" alt="weather icon" class="img0">
+              <p class="subtitle is-2 temperatureFont has-text-white-bis temp0">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid0"></span></p>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title is-5" index="1">Two</p>
-              <p class="subtitle is-5">Subtitle</p>
+            <article class="tile is-child box forecastBgrd">
+              <h3 class="title is-5 has-text-link" data-index="1">Two</h3>
+              <img src="#" alt="weather icon" class="img1">
+              <p class="subtitle is-2 temperatureFont has-text-white-bis temp1">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid1"></span></p>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title is-5" index="2">Three</p>
-              <p class="subtitle is-5">Subtitle</p>
+            <article class="tile is-child box forecastBgrd">
+              <h3 class="title is-5 has-text-link" data-index="2">Three</h3>
+              <img src="#" alt="weather icon" class="img2">
+              <p class="subtitle is-2 temperatureFont has-text-white-bis temp2">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid2"></span></p>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title is-5" index="3">Four</p>
-              <p class="subtitle is-5">Subtitle</p>
+            <article class="tile is-child box forecastBgrd">
+              <h3 class="title is-5 has-text-link" data-index="3">Four</h3>
+              <img src="#" alt="weather icon" class="img3">
+              <p class="subtitle is-2 temperatureFont has-text-white-bis temp3">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid3"></span></p>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title is-5" index="4">Five</p>
-              <p class="subtitle is-5">Subtitle</p>
+            <article class="tile is-child box forecastBgrd">
+              <h3 class="title is-5 has-text-link" data-index="4">Five</h3>
+              <img src="#" alt="weather icon" class="img4">
+              <p class="subtitle is-2 temperatureFont has-text-white-bis temp4">Subtitle</p>
+              <p class="has-text-white-bis"><b>Humidity: </b><span class="humid4"></span></p>
             </article>
           </div>
         </div>
-      </div>
-      
-       
+      </div>    
+    </section>
+    <section class="footer">
+      <div class="container">
+        <p>Copyright Enid Soto. App built with Bulma, jQuery and the OpenWeather API.</p>
       </div>
     </section>
 
