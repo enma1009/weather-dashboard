@@ -41,7 +41,7 @@ function getWeather(q) {
             $("#degreeMain").text(response.main.temp);
             $("#humidityMain").text(response.main.humidity);
             $("#windMain").text(response.wind.speed);
-            $("#iconMain").attr("src","http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
+            $("#iconMain").attr("src","https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
             var uvIndexcoord = "&lat="+response.coord.lat+"&lon="+response.coord.lon;
             var cityId = response.id;
             displayUVindex(uvIndexcoord);
@@ -73,7 +73,7 @@ function displayForecast(c) {
                 $("h3[data-index='"+ i +"']").text(newDate);
                 $(".temp"+i).text(response.list[counter].main.temp+" °F");
                 $(".humid"+i).text(response.list[counter].main.humidity);
-                $(".img"+i).attr("src","http://openweathermap.org/img/wn/" + response.list[counter].weather[0].icon + "@2x.png");
+                $(".img"+i).attr("src","https://openweathermap.org/img/wn/" + response.list[counter].weather[0].icon + "@2x.png");
                 counter= counter+8;
             }
     });
