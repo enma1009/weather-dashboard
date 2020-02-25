@@ -1,5 +1,6 @@
 $(window).on('load', function(){
     currentLocation();
+    checkLocalStorage();
 });
 
 var APIKey = "09e0d7e534e41ce68ba5f2577fa5f760";
@@ -14,6 +15,7 @@ $(".search").on("click", function(){
     q = $(".city").val();
     getWeather(q); 
     createRecentSearchBtn(q);
+    saveToLocalStorage(q);
 });
 
 function createRecentSearchBtn(q) {
@@ -26,7 +28,7 @@ function createRecentSearchBtn(q) {
         var newQ=$(this).text();
         getWeather(newQ); 
     });
-}
+};
 
 function getWeather(q) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + q + "&units=imperial&appid=" + APIKey;
@@ -35,7 +37,6 @@ function getWeather(q) {
         method: "GET"
         })
         .then(function(response) {
-            console.log(response);
             $("#cityMain").text(response.name+ ", " + response.sys.country);
             $("#degreeMain").text(response.main.temp);
             $("#humidityMain").text(response.main.humidity);
@@ -65,7 +66,6 @@ function displayForecast(c) {
         })
         .then(function(response) {
             var counter = 0;
-            console.log(response);
             for (var i=0; i < 5; i++) {
                 var date = response.list[counter].dt_txt;
                 var croppedDate = date.substr(5, 5);
@@ -88,4 +88,29 @@ function currentLocation() {
             q = response.city;
             getWeather(q);
     });  
+};
+
+function checkLocalStorage() {
+    var storedData = localStorage.getItem('queries');
+    var dataArray = [];
+    if(!storedData) {
+        console.log("no data stored")
+    } else {
+        storedData.trim();
+        dataArray = storedData.split(",");
+        for (var i=0; i<dataArray.length; i++) {
+            createRecentSearchBtn(dataArray[i]);
+        }
+    };
+};
+
+function saveToLocalStorage(q) {
+    var data = localStorage.getItem('queries');
+    if(data) {
+        data = data + ","+ q;
+        localStorage.setItem('queries', data);
+    } else {
+        data = q;
+        localStorage.setItem('queries', data);
+    };
 };
