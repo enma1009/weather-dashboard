@@ -85,7 +85,8 @@ function currentLocation() {
         method: "GET"
         })
         .then(function(response) {
-            q = response.city;
+            q = response.city || 'miami';
+            console.log(q);
             getWeather(q);
     });  
 };
